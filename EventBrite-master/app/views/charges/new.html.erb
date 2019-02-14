@@ -1,18 +1,19 @@
 <%= form_tag charges_path do %>
-  <article>
+  <center>
+    
     <% if flash[:error].present? %>
       <div id="error_explanation">
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
     <label class="amount">
-      <span>Montant à payer : <%= rand(100..800) %> €</span>
+      <span>Amount: $5.00</span>
     </label>
-  </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
-          data-amount="<%= rand(10000..90000) %>"
+          data-amount="500"
           data-locale="auto"></script>
+          </center>
 <% end %>
