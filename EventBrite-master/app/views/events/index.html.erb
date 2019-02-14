@@ -1,0 +1,34 @@
+
+<!-- Header -->
+  <header id="head">
+    <div class="container">
+      <h2 class="display-5">Bienvenue sur Event After All!</h2>
+        <h1 class="lead">codé avec le ***</h1>
+        <h3 class="tagline">Bordeaux, on dit pain au chocolat</h3>
+        <i class="fas fa-heart"></i>
+      </div>
+  </header>
+  <!-- /Header -->
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <p>Ti jeu de mot Even After All, Event After All. T'as vu... Allez viens, des petits events sympas. Meilleurs qu'à Bordeaux.</p>
+          <p style="margin-bottom:20px;">
+          <p><a class="btn btn-primary btn-lg" href="https://www.youtube.com/watch?v=rlarCLhzfoU" role="button">Une belle équipe &raquo;</a></p>
+        </div>
+      </div>
+    
+   <%  @events = Event.all %>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <% @events.each do |event| %>
+          <div class="col-md-4">
+            <h2><%= event.title %></h2>
+            <p><%= event.description %></p>
+            <p><a class="btn btn-secondary" href="<%= event_path(event.id) %>" role="button">En savoir plus &raquo;</a></p>
+          </div>
+          <% end %>
+        </div>

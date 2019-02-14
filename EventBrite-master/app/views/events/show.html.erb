@@ -1,0 +1,10 @@
+<div>
+<%= @event.title %>
+Date : <%= @event.start_date %><br>
+Durée : <%= @event.duration %><br>
+Lieu : <%= @event.location %><br>
+Description : <%= @event.description %><br>
+Tarif : <%= @event.price %><br>
+</div>
+
+<p><a class="btn btn-secondary" href="<%= new_charge_path(@event.id) %> " role="button">S'inscrire et passer à la caisse &raquo;</a></p>
